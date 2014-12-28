@@ -2,6 +2,7 @@
 
 import sys
 
+
 # test command:
 # > cat small_forum.csv | sed 1d | python mapper.py | python header.py
 def padding(hour):
