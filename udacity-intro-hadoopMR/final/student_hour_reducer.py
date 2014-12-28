@@ -14,7 +14,7 @@ def reducer():
         if len(data) != 3:
             continue
 
-        author_id, added_at, hour = data
+        hour, author_id, added_at = data
 
         if prev and prev != hour:
             print "{0}\t{1}".format(prev, count)
