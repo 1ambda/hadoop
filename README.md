@@ -5,6 +5,3 @@ hadoop note
 
 by Cloudera
 
-### Real-Time Analytics with Apache Storm
-
-by Twitter

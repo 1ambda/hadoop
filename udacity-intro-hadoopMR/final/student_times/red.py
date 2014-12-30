@@ -2,16 +2,11 @@
 
 import sys
 
-
 # test command:
-# > cat small_forum.csv | sed 1d | python mapper.py | python header.py
-def padding(hour):
-    h = str(hour)
-    if len(h) == 1:
-        return "0" + h
-    else:
-        return h
-
+# > cat small_forum.csv | ./map.py | sort | ./red.py
+def maxHours(hours):
+    m = max(hours)
+    return [h for h, x in enumerate(hours) if x == m]
 
 def reducer():
     prev_id = None
@@ -27,17 +22,16 @@ def reducer():
         hour = int(hour)
 
         if prev_id and prev_id != author_id:
-            mostActiveHour = hours.index(max(hours))
-            print "{0}\t{1}".format(author_id, padding(mostActiveHour))
+            for h in maxHours(hours):
+                print "{0}\t{1}".format(prev_id, h)
             hours = [0] * 24
 
         prev_id = author_id
         hours[hour] += 1
 
     if prev_id:
-        mostActiveHour = hours.index(max(hours))
-        print "{0}\t{1}".format(author_id, padding(mostActiveHour))
-
+        for i in maxHours(hours):
+            print "{0}\t{1}".format(author_id, h)
 
 def main():
     reducer()
