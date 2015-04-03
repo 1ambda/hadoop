@@ -12,13 +12,13 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
-import org.springframework.boot.SpringApplication;
 
 public class App {
 
-	public static void main(String[] args) throws IOException,
-    InterruptedException, ClassNotFoundException{
-//		SpringApplication.run(AppConfiguration.class, args);
+	public static void main(String[] args) 
+			throws IOException,
+			InterruptedException,
+			ClassNotFoundException{
 
 		Path inputPath = new Path(args[0]);
 		Path outputDir = new Path(args[1]);
