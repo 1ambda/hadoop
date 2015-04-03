@@ -31,7 +31,9 @@ test {
     systemProperties 'property': 'value'
 }
 
-
+task wrapper(type: Wrapper) {
+	gradleVersion = "2.3"
+}
 
 uploadArchives {
     repositories {
